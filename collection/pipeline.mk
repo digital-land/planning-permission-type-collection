@@ -1,0 +1,13 @@
+PLANNING_PERMISSION_TYPE_DATASET=$(DATASET_DIR)planning-permission-type.csv
+PLANNING_PERMISSION_TYPE_TRANSFORMED_FILES=\
+    $(TRANSFORMED_DIR)planning-permission-type/deb2fc4b3a5a1838f955591aaadfe1f2005a54909cfcffbe28523ade2b4fd3f2.csv
+
+$(TRANSFORMED_DIR)planning-permission-type/deb2fc4b3a5a1838f955591aaadfe1f2005a54909cfcffbe28523ade2b4fd3f2.csv: collection/resource/deb2fc4b3a5a1838f955591aaadfe1f2005a54909cfcffbe28523ade2b4fd3f2
+	$(run-pipeline)
+
+$(PLANNING_PERMISSION_TYPE_DATASET): $(PLANNING_PERMISSION_TYPE_TRANSFORMED_FILES)
+	$(build-dataset)
+
+transformed:: $(PLANNING_PERMISSION_TYPE_TRANSFORMED_FILES)
+
+dataset:: $(PLANNING_PERMISSION_TYPE_DATASET)
