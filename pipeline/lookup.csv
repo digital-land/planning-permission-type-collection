@@ -1,4 +1,4 @@
-pipeline,resource,organisation,value,entity
+prefix,resource,organisation,reference,entity
 planning-permission-type,,,full-planning-permission,11900000
 planning-permission-type,,,outline-planning-permission,11900001
 planning-permission-type,,,reserved-matters-approval,11900002
